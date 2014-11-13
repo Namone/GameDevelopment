@@ -32,7 +32,7 @@ public class GameStateManager {
 		}
 		// Add new game states that we can access via their index
 		gameStates.add(new TitleScreen()); // MenuState added at index 0 (position 1)
-		gameStates.add(new Game()); // POSITION 2 INDEX 1
+		gameStates.add(new Game());
 		
 	}
 	// Initialize selected game state

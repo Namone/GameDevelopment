@@ -19,11 +19,8 @@ import com.namone.input.InputListener;
 
 public class TitleScreen extends GameState{
 	
-	Font font;
-	TrueTypeFont ttFont;
-	UnicodeFont uniFont;
-	String title = "TITLE IN PROGRESS";
 	InputListener menuSel = new InputListener();
+	Texture playerTexture;
 	
 	public TitleScreen(){}
 	
@@ -38,6 +35,8 @@ public class TitleScreen extends GameState{
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}	
+		
+		playerTexture = texture;
 	}
 	
 	public void update(){
@@ -63,6 +62,8 @@ public class TitleScreen extends GameState{
 			glClearColor(0, 0, 25, 1);  // check to see if methods work.  CAN REMOVE AFTER TESTING
 			gsm.setCurrent(1); // After click, set current state to 1 (GAME_STATE)
 			System.out.println("Enter GAME_STATE ");
+			gsm.init(playerTexture); // Load player texture for game state
+			
 			
 		}
 	}

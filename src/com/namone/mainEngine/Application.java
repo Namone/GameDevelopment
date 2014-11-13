@@ -51,7 +51,7 @@ public class Application {
 	// Load graphic related items
 	public void loadGraphics(){
 		// Set it equal to returned texture
-		//gsm.init(playerLoad.loadPlayerTexture());
+		gsm.init(playerLoad.loadPlayerTexture());
 	}
 	// Loop through the game
 	public void gameLoop(){		

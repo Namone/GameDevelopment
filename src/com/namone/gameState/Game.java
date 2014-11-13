@@ -11,7 +11,7 @@ public class Game extends GameState{
 	Player player;
 	InputListener menuSel = new InputListener();
 	Texture playerTexture;
-	
+
 	// Initialize the world and player
 	public void init(Texture texture) {		
 		player = new Player("N/A", 60, 60, texture); // Create player - Temporary arguments for player		
