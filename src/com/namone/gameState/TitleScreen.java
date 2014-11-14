@@ -1,7 +1,17 @@
 package com.namone.gameState;
 
+<<<<<<< HEAD
 import static org.lwjgl.opengl.GL11.*;
 import java.awt.Font;
+=======
+import static org.lwjgl.opengl.GL11.GL_QUADS;
+import static org.lwjgl.opengl.GL11.glBegin;
+import static org.lwjgl.opengl.GL11.glClearColor;
+import static org.lwjgl.opengl.GL11.glColor3f;
+import static org.lwjgl.opengl.GL11.glEnd;
+import static org.lwjgl.opengl.GL11.glVertex2f;
+
+>>>>>>> origin/master
 import org.lwjgl.opengl.Display;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.opengl.Texture;

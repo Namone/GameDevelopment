@@ -1,12 +1,13 @@
 package com.namone.player;
 
-import java.io.IOException;
+import static org.lwjgl.opengl.GL11.GL_QUADS;
+import static org.lwjgl.opengl.GL11.glBegin;
+import static org.lwjgl.opengl.GL11.glEnd;
+import static org.lwjgl.opengl.GL11.glTexCoord2f;
+import static org.lwjgl.opengl.GL11.glVertex2f;
+
 import org.newdawn.slick.Color;
-import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.opengl.Texture;
-import org.newdawn.slick.opengl.TextureLoader;
-import org.newdawn.slick.util.ResourceLoader;
-import static org.lwjgl.opengl.GL11.*;
 
 public class Player {
 	// General statistics for the player
