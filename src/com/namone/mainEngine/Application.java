@@ -15,12 +15,14 @@ import com.namone.textureLoader.*;
 
 public class Application {
 	
-	boolean isRunning = false;	
+	boolean isRunning = false;	// Not really used; figured 
+	// it would be good to have
 	public GameStateManager gsm = new GameStateManager();
 	public Graphics g; // New graphics context
 	public Graphics graphics;
 	public TextureLoad loadGraphics = new TextureLoad();
 	public LoadPlayer playerLoad = new LoadPlayer();
+	public Texture texture; 
 
 	public Application(){
 		run();
@@ -52,7 +54,7 @@ public class Application {
 	// Load graphic related items
 	public void loadGraphics(){
 		// Set it equal to returned texture
-		gsm.init(playerLoad.loadPlayerTexture());
+		gsm.init(texture);
 
 	}
 	// Loop through the game
@@ -74,8 +76,6 @@ public class Application {
 	// Initialize OpenGL
 	public void initGL(){
 		glEnable(GL_TEXTURE_2D); // Enables texture drawing !IMPORTANT!
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); // Allows alpha on image
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		glOrtho(0, 800, 0, 600, -1, 1);		

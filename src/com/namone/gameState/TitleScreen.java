@@ -1,59 +1,44 @@
 package com.namone.gameState;
 
-import static org.lwjgl.opengl.GL11.GL_QUADS;
-import static org.lwjgl.opengl.GL11.glBegin;
-import static org.lwjgl.opengl.GL11.glClearColor;
-import static org.lwjgl.opengl.GL11.glColor3f;
-import static org.lwjgl.opengl.GL11.glEnd;
-import static org.lwjgl.opengl.GL11.glVertex2f;
-
+import static org.lwjgl.opengl.GL11.*;
 import java.awt.Font;
-
 import org.lwjgl.opengl.Display;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.TrueTypeFont;
-import org.newdawn.slick.UnicodeFont;
 import org.newdawn.slick.opengl.Texture;
-
 import com.namone.input.InputListener;
 
 public class TitleScreen extends GameState{
 	
 	InputListener menuSel = new InputListener();
-	Texture playerTexture;
+	Texture Texture;
 	
 	public TitleScreen(){}
 	
 	public void init(Texture texture){
-//		font = new Font("Times New Roman", Font.BOLD, 30);
-//		uniFont = new UnicodeFont(font, 24, false, false);
-//		uniFont.getEffects().add(new ColorEffect());
-//		uniFont.addAsciiGlyphs();
-//		try {
-//			uniFont.loadGlyphs();
-//		} catch (SlickException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}	
-		
-		playerTexture = texture; // To pass when button is clicked
+		Texture = texture; 
 	}
+	
 	
 	public void update(){
 		
 	}
 	// Draw button
 	public void draw(Graphics g, Graphics graphics, GameStateManager gsm){
+		//Color.white.bind();
+		//Texture.bind();		
+		glClearColor(50, 50, 50, 0);
 		
-		glClearColor(50, 50, 50, 1);
-		
-		glColor3f(1f, 0.5f, 0.5f);
+		glColor3f(0.1f, 0.5f, 0.9f);
 		glBegin(GL_QUADS);
 		{
-			glVertex2f(Display.getWidth() / 2, Display.getHeight() / 2);
-			glVertex2f(Display.getWidth() / 2 + 300, Display.getHeight() / 2);
-			glVertex2f(Display.getWidth() / 2 + 300, Display.getHeight() / 2 + 50);
-			glVertex2f(Display.getWidth() / 2, Display.getHeight() / 2 + 50);
+			//glTexCoord2f(0, 1);
+			glVertex2f(Display.getWidth() / 4, Display.getHeight() / 2);
+			//glTexCoord2f(1, 1);
+			glVertex2f(Display.getWidth() / 4 + 415, Display.getHeight() / 2);
+			//glTexCoord2f(1, 0);
+			glVertex2f(Display.getWidth() / 4 + 415, Display.getHeight() / 2 + 50);
+			//glTexCoord2f(0, 0);
+			glVertex2f(Display.getWidth() / 4, Display.getHeight() / 2 + 50);
 			
 		}
 		glEnd();
@@ -62,7 +47,7 @@ public class TitleScreen extends GameState{
 			glClearColor(0, 0, 25, 1);  // check to see if methods work.  CAN REMOVE AFTER TESTING
 			gsm.setCurrent(1); // After click, set current state to 1 (GAME_STATE)
 			System.out.println("Enter GAME_STATE ");
-			gsm.init(playerTexture); // Load player texture for game state
+			gsm.init(Texture); // Pass texture object back for player to use
 			
 			
 		}

@@ -25,6 +25,7 @@ public class Game extends GameState{
 	public void draw(Graphics g, Graphics graphics, GameStateManager gsm) {
 		glClearColor(0, 50, 0, 1);
 		// Draw the player to the screen (60, 60)
+		
 		player.draw();
 	}
 

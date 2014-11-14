@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.opengl.Texture;
 
+import com.namone.player.LoadPlayer;
 import com.namone.player.Player;
+import com.namone.texture.menu.MenuLoader;
 
 public class GameStateManager {
 	// An arrayList to hold game states
@@ -14,7 +16,8 @@ public class GameStateManager {
 	Graphics g = new Graphics(); // New graphics object to pass through draw()
 	
 	private int currentState; // Holds current state
-	
+	private MenuLoader menuLoad = new MenuLoader();
+	private LoadPlayer playerLoad = new LoadPlayer();
 	private final int MENU_STATE = 0; // Index of TitleState
 	private final int GAME_STATE = 1; // Index of Game
 	private final int PAUSE_STATE = 2; // Index of PuaseState
@@ -37,7 +40,14 @@ public class GameStateManager {
 	}
 	// Initialize selected game state
 	public void init(Texture texture){
-		gameStates.get(currentState).init(texture);
+		if(currentState == MENU_STATE){
+			texture = menuLoad.loadMenuTexture(); // Get texture for menu (Strings...)
+			gameStates.get(currentState).init(texture);
+		}else if(currentState == GAME_STATE){
+			playerLoad.initGL(); // Enable OpenGL properties for player sprite
+			texture = playerLoad.loadPlayerTexture(); // Get player texture
+			gameStates.get(currentState).init(texture);
+		}
 	}
 	// Update selected game state
 	public void update(){
@@ -45,7 +55,7 @@ public class GameStateManager {
 	}
 	// Draw selected game state
 	public void draw(Graphics g, Graphics graphics, GameStateManager gsm){
-		gameStates.get(currentState).draw(g, graphics, gsm);
+		gameStates.get(currentState).draw(g, graphics, gsm); // -----> Draws selected game state
 	}
 	// Get current game state
 	public int getCurrent(){
