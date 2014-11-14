@@ -14,7 +14,7 @@ public class Game extends GameState{
 
 	// Initialize the world and player
 	public void init(Texture texture) {		
-		player = new Player("N/A", 60, 60, texture); // Create player - Temporary arguments for player		
+		player = new Player("Jenkins", texture); // Create player - Temporary arguments for player	
 	}	
 	// Update the player & the world
 	public void update() {		// Updates player position

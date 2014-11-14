@@ -15,11 +15,11 @@ public class Player {
 	private int playerStrength = 10;
 	private String playerName; // Input by user on player creation
 	//public Vector2f playerPosition; // Player position
-	public float x = 50, y = 50; // Player position
+	public float x = 10, y = 50; // Player position
 	public Texture playerTexture; // Player texture
 	
 	// Create player
-	public Player(String pName, int playerX, int playerY, Texture pTexture){
+	public Player(String pName, Texture pTexture){
 		playerName = pName; // Name of player (Temporary name is Tom)
 		//playerPosition = new Vector2f(playerX, playerY); // Place player at random location
 		// Tell us the player is created
@@ -36,7 +36,7 @@ public class Player {
 		glBegin(GL_QUADS);
 		{
 			glTexCoord2f(0, 1); // Give orientation to the texture placed on object
-			glVertex2f(x,y); // Object coordinates
+			glVertex2f(x, y); // Object coordinates
 			glTexCoord2f(1, 1);
 			glVertex2f(x + playerTexture.getTextureWidth() / 2, y);
 			glTexCoord2f(1, 0);

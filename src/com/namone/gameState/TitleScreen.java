@@ -36,7 +36,7 @@ public class TitleScreen extends GameState{
 //			e.printStackTrace();
 //		}	
 		
-		playerTexture = texture;
+		playerTexture = texture; // To pass when button is clicked
 	}
 	
 	public void update(){

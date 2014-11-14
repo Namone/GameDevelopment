@@ -10,7 +10,7 @@ public class LoadPlayer {
 	Texture playerTexture;
 	
 	public Texture loadPlayerTexture(){
-		playerTexture = load.loadTexture("/res/testsprite.png");
+		playerTexture = load.loadTexture("/res/playerSprites/testsprite.png");
 		return playerTexture;
 	}
 

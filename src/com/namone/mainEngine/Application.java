@@ -10,6 +10,7 @@ import org.newdawn.slick.opengl.Texture;
 
 import com.namone.gameState.GameStateManager;
 import com.namone.player.LoadPlayer;
+import com.namone.texture.menu.MenuLoader;
 import com.namone.textureLoader.*;
 
 public class Application {
@@ -52,6 +53,7 @@ public class Application {
 	public void loadGraphics(){
 		// Set it equal to returned texture
 		gsm.init(playerLoad.loadPlayerTexture());
+
 	}
 	// Loop through the game
 	public void gameLoop(){		
@@ -72,10 +74,13 @@ public class Application {
 	// Initialize OpenGL
 	public void initGL(){
 		glEnable(GL_TEXTURE_2D); // Enables texture drawing !IMPORTANT!
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); // Allows alpha on image
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		glOrtho(0, 800, 0, 600, -1, 1);		
 		glMatrixMode(GL_MODELVIEW);
+		glDisable(GL_DEPTH_TEST); // Since it is not a 3D game
 	}
 	// Update code
 	public void update(){
