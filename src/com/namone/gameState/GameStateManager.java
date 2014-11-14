@@ -5,13 +5,10 @@ import java.util.ArrayList;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.opengl.Texture;
 
-<<<<<<< HEAD
 import com.namone.player.LoadPlayer;
 import com.namone.player.Player;
 import com.namone.texture.menu.MenuLoader;
 
-=======
->>>>>>> origin/master
 public class GameStateManager {
 	// An arrayList to hold game states
 	private ArrayList<GameState> gameStates = new ArrayList<GameState>();
@@ -47,7 +44,6 @@ public class GameStateManager {
 			texture = menuLoad.loadMenuTexture(); // Get texture for menu (Strings...)
 			gameStates.get(currentState).init(texture);
 		}else if(currentState == GAME_STATE){
-			playerLoad.initGL(); // Enable OpenGL properties for player sprite
 			texture = playerLoad.loadPlayerTexture(); // Get player texture
 			gameStates.get(currentState).init(texture);
 		}

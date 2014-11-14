@@ -10,7 +10,7 @@ public class MenuLoader {
 	Texture texture;
 	
 	public Texture loadMenuTexture(){
-		texture = loadTexture.loadTexture("res/gameSprites/woodimage.png");
+		texture = loadTexture.loadTexture("res/gameSprites/startgame.png");
 		return texture;
 	}
 	

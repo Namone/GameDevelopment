@@ -1,20 +1,14 @@
 package com.namone.gameState;
 
-<<<<<<< HEAD
 import static org.lwjgl.opengl.GL11.*;
-import java.awt.Font;
-=======
-import static org.lwjgl.opengl.GL11.GL_QUADS;
-import static org.lwjgl.opengl.GL11.glBegin;
-import static org.lwjgl.opengl.GL11.glClearColor;
-import static org.lwjgl.opengl.GL11.glColor3f;
-import static org.lwjgl.opengl.GL11.glEnd;
-import static org.lwjgl.opengl.GL11.glVertex2f;
 
->>>>>>> origin/master
+import java.awt.Font;
+
 import org.lwjgl.opengl.Display;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.opengl.Texture;
+
 import com.namone.input.InputListener;
 
 public class TitleScreen extends GameState{
@@ -34,20 +28,20 @@ public class TitleScreen extends GameState{
 	}
 	// Draw button
 	public void draw(Graphics g, Graphics graphics, GameStateManager gsm){
-		//Color.white.bind();
-		//Texture.bind();		
+		Color.white.bind();
+		Texture.bind();		
 		glClearColor(50, 50, 50, 0);
 		
 		glColor3f(0.1f, 0.5f, 0.9f);
 		glBegin(GL_QUADS);
 		{
-			//glTexCoord2f(0, 1);
+			glTexCoord2f(0, 1);
 			glVertex2f(Display.getWidth() / 4, Display.getHeight() / 2);
-			//glTexCoord2f(1, 1);
+			glTexCoord2f(1, 1);
 			glVertex2f(Display.getWidth() / 4 + 415, Display.getHeight() / 2);
-			//glTexCoord2f(1, 0);
+			glTexCoord2f(1, 0);
 			glVertex2f(Display.getWidth() / 4 + 415, Display.getHeight() / 2 + 50);
-			//glTexCoord2f(0, 0);
+		    glTexCoord2f(0, 0);
 			glVertex2f(Display.getWidth() / 4, Display.getHeight() / 2 + 50);
 			
 		}

@@ -16,8 +16,8 @@ public class LoadPlayer {
 	// Initialize OpenGL properties necessary for 
 	// sprite transparency (alpha)
 	public void initGL(){
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); // Allows alpha on image
+		//glEnable(GL_BLEND);
+		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); // Allows alpha on image
 	}
 	
 }
