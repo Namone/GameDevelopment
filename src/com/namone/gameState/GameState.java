@@ -3,8 +3,6 @@ package com.namone.gameState;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.opengl.Texture;
 
-import com.namone.mainEngine.Application;
-
 //@GENERAL BLUE-PRINT FOR ALL GAMESTATES
 
 public abstract class GameState {

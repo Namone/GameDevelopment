@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.opengl.Texture;
 
-import com.namone.player.Player;
-
 public class GameStateManager {
 	// An arrayList to hold game states
 	private ArrayList<GameState> gameStates = new ArrayList<GameState>();
