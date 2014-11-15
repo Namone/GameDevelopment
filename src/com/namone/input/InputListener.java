@@ -8,6 +8,8 @@ import com.namone.player.Player;
 
 public class InputListener {
 	
+	private boolean isRunning = false; // Is the player running?
+	
 	public InputListener(){
 		init();
 	}
@@ -34,16 +36,29 @@ public class InputListener {
 	
 	public void keyboardClickListener(Player player){ // Changes player position
 		while(Keyboard.next()){
-			if(Keyboard.isKeyDown(Keyboard.KEY_W) || Keyboard.isKeyDown(Keyboard.KEY_UP)){            // Moves Up
+			if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)){
+				isRunning = true;
+				
+		
+			}else if(Keyboard.isKeyDown(Keyboard.KEY_W) || Keyboard.isKeyDown(Keyboard.KEY_UP)){            // Moves Up
 				player.y += 3;
+				// If the player is running; move faster
+				if(isRunning){
+					player.y += 10;
+				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_A) || Keyboard.isKeyDown(Keyboard.KEY_LEFT)){   // Moves Left
 				player.x -= 3;
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_S) || Keyboard.isKeyDown(Keyboard.KEY_DOWN)){   // Moves Down
 				player.y -= 3;
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_D) || Keyboard.isKeyDown(Keyboard.KEY_RIGHT)){  // Moves Right 
 				player.x += 3;
-			} 
+			} else if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)){
+				isRunning = false;
+			}
+
 		}
+		
+		
 	}
 	
 //	checks to see if the mouse click is inside of the specific area

@@ -20,7 +20,7 @@ public class Player {
 	
 	// Create player
 	public Player(String pName, Texture pTexture){
-		playerName = pName; // Name of player (Temporary name is Tom)
+		playerName = pName; // Name of player
 		//playerPosition = new Vector2f(playerX, playerY); // Place player at random location
 		// Tell us the player is created
 		System.out.println("Player Created!"); // Player is created when you add it to the ArrayList<>() in 
@@ -38,11 +38,11 @@ public class Player {
 			glTexCoord2f(0, 1); // Give orientation to the texture placed on object
 			glVertex2f(x, y); // Object coordinates
 			glTexCoord2f(1, 1);
-			glVertex2f(x + playerTexture.getTextureWidth() / 2, y);
+			glVertex2f(x + playerTexture.getTextureWidth() / 4, y);
 			glTexCoord2f(1, 0);
-			glVertex2f(x + playerTexture.getTextureWidth() / 2, y + playerTexture.getTextureHeight() / 2);
+			glVertex2f(x + playerTexture.getTextureWidth() / 4, y + playerTexture.getTextureHeight() / 4);
 			glTexCoord2f(0, 0);
-			glVertex2f(x, y + playerTexture.getTextureHeight() / 2);
+			glVertex2f(x, y + playerTexture.getTextureHeight() / 4);
 		}
 		glEnd(); 
 	}
