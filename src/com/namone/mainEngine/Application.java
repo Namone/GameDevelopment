@@ -22,7 +22,7 @@ public class Application {
 	public Graphics graphics;
 	public TextureLoad loadGraphics = new TextureLoad();
 	public LoadPlayer playerLoad = new LoadPlayer();
-	public Texture texture; 
+	public Texture texture;
 
 	public Application(){
 		run();
@@ -55,6 +55,7 @@ public class Application {
 	public void loadGraphics(){
 		// Set it equal to returned texture
 		gsm.init(texture);
+
 
 	}
 	// Loop through the game
