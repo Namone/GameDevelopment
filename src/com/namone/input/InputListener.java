@@ -3,7 +3,6 @@ package com.namone.input;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
-
 import com.namone.player.Player;
 
 public class InputListener {

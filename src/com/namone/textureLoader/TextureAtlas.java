@@ -4,48 +4,63 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.SlickException;
+import com.namone.blocks.*;
 
 /*
- * STILL BEING WORKED ON - 
+ * Texture atlas class.
  * 
- * Right now I am testing this class by loading it in the Loadplayer.class. 
- * I found it most convenient there. 
- * 
- * I am getting the textures of the dirt, grass, and stone, to load onto the screen...
- * But not individually like I want them too.
+ * Pass in texture ID you want and it will return selected texture.
+ * This is all called from Game.class; modify drawn textures through
+ * there.
  * 
  */
-public class TextureAtlas {
+public class TextureAtlas{
 	
+	private int ID; // ID of block
 	TextureLoad loadTextureAtlas = new TextureLoad();
-	SpriteSheet spriteSheet; // The sprite-sheet
-	Image atlas;
-	Texture Atlas;
-	private int ID;
-	private final int SPRITEW = 32; // Width of each sprite on sprite-sheet
-	private final int SPRITEH = 32; // Height of each sprite on sprite-sheet;
+	Texture atlas;
+	SpriteSheet spriteSheet;
+	Image textureAtlas;
+	
+	// TERRAIN
+	Image dirt;
+	Image grass;
+	Image stone;
 	
 	public void init(){
-		Atlas = loadTextureAtlas.loadTexture("res/gameSprites/atlas.png");		
-		atlas = new Image(Atlas); // Create new image using texture atlas as texture
-		spriteSheet = new SpriteSheet(atlas, SPRITEW, SPRITEH, 2); // Load up the sprite sheet
+		try {
+			textureAtlas = new Image("res/gameSprites/atlas.png");
+		} catch (SlickException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		spriteSheet = new SpriteSheet(textureAtlas, 32, 32, 2);
+
 	}
 	
 	public Image assignSpriteId(int id){
 		ID = id;	
-		spriteSheet.startUse();
+		// NOTE: Images use cell positioning (not X Y)
+		// Thus the 0, 0 : 1, 0 : 2, 0 
 		switch(id)		
 		{
 		// BEGIN SWITCH
-		case 0: // ID 0 ----- > DIRT			
-			return spriteSheet.getSubImage(0, 0);	
+		case 0: // ID 0 ----- > DIRT
+			new Dirt();
+			dirt = spriteSheet.getSubImage(0, 0);
+			return dirt;
 		case 1: // ID 1 ----- > GRASS
-			return spriteSheet.getSubImage(32, 32);			
+			new Grass();
+			grass = spriteSheet.getSubImage(1, 0);			
+			return grass;	
 		case 2: // ID 2 ----- > STONE
-			return spriteSheet.getSubImage(64, 64);			
+			new Stone();
+			stone = spriteSheet.getSubImage(2, 0);
+			return stone;		
 		default:
 			try {
-				throw new SlickException("Failed to load texture");
+				throw new SlickException(">> TEXTURE LOAD FAILED");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -53,7 +68,7 @@ public class TextureAtlas {
 			
 		// END SWITCH
 		}
-		spriteSheet.endUse();
+		
 		return null; // If, for some reason, no texture is set
 		
 	}
