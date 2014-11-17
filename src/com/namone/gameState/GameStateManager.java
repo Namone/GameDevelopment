@@ -8,7 +8,7 @@ import org.newdawn.slick.opengl.Texture;
 import com.namone.player.LoadPlayer;
 import com.namone.player.Player;
 import com.namone.texture.menu.MenuLoader;
-import com.namone.textureLoader.TextureAtlas;
+import com.namone.textureLoader.WorldTextureLoad;
 
 public class GameStateManager {
 	// An arrayList to hold game states
@@ -22,7 +22,7 @@ public class GameStateManager {
 	private final int MENU_STATE = 0; // Index of TitleState
 	private final int GAME_STATE = 1; // Index of Game
 	private final int PAUSE_STATE = 2; // Index of PuaseState	
-	public TextureAtlas texAtlas = new TextureAtlas();
+	public WorldTextureLoad texAtlas = new WorldTextureLoad();
 	
 	public GameStateManager(){
 		currentState = MENU_STATE; // Default state is menu

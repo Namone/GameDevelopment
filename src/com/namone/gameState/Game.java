@@ -8,19 +8,19 @@ import static org.lwjgl.opengl.GL11.*;
 
 import com.namone.input.InputListener;
 import com.namone.player.Player;
-import com.namone.textureLoader.TextureAtlas;
+import com.namone.textureLoader.WorldTextureLoad;
 
 public class Game extends GameState{
 	
 	Player player;
 	InputListener menuSel = new InputListener();
-	TextureAtlas atlas = new TextureAtlas();
+	WorldTextureLoad atlas = new WorldTextureLoad();
 	Texture playerTexture;
-	public int ID; // CHANGE THIS TO CHANGE TEXTURE
+	public int ID = 0; // CHANGE THIS TO CHANGE TEXTURE
 	// Returned image from sprite sheet
 	Image spriteTexture;
 	// Location for sprites (dirt, stone, etc)
-	private int X = -2, Y = -2; // Default location
+	private int X = 60, Y = 60; // Default location
 	// -2 places it right against window border
 
 	// Initialize the world and player
@@ -36,15 +36,15 @@ public class Game extends GameState{
 	// Draw the player & the world
 	public void draw(Graphics g, Graphics graphics, GameStateManager gsm) {
 		glClearColor(0, 50, 0, 1);
-		// Draw the player to the screen (60, 60)
+		// Draw world
 		drawWorld(ID, X, Y);
+		// Draw the player to the screen (60, 60)
 		player.draw();
 		
 	}
 	
 	public void drawWorld(int id, int x, int y){
-		spriteTexture = atlas.assignSpriteId(id); // Get texture
-		spriteTexture.draw(x, y); // Draw texture		
+		atlas.createBlock(id, x, y); // Get texture		
 		
 	}
 

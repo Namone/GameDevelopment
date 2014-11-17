@@ -15,7 +15,7 @@ public class Player {
 	private int playerStrength = 10;
 	private String playerName; // Input by user on player creation
 	//public Vector2f playerPosition; // Player position
-	public float x = 10, y = 50; // Player position
+	public float X = 10, Y = 50; // Player position
 	public Texture playerTexture; // Player texture
 	
 	// Create player
@@ -36,13 +36,13 @@ public class Player {
 		glBegin(GL_QUADS);
 		{
 			glTexCoord2f(0, 1); // Give orientation to the texture placed on object
-			glVertex2f(x, y); // Object coordinates
+			glVertex2f(X, Y); // Object coordinates
 			glTexCoord2f(1, 1);
-			glVertex2f(x + playerTexture.getTextureWidth() / 4, y);
+			glVertex2f(X + playerTexture.getTextureWidth() / 4, Y);
 			glTexCoord2f(1, 0);
-			glVertex2f(x + playerTexture.getTextureWidth() / 4, y + playerTexture.getTextureHeight() / 4);
+			glVertex2f(X + playerTexture.getTextureWidth() / 4, Y + playerTexture.getTextureHeight() / 4);
 			glTexCoord2f(0, 0);
-			glVertex2f(x, y + playerTexture.getTextureHeight() / 4);
+			glVertex2f(X, Y + playerTexture.getTextureHeight() / 4);
 		}
 		glEnd(); 
 	}
@@ -52,16 +52,16 @@ public class Player {
 	}
 	
 	public float getPlayerX(){
-		return x;
+		return X;
 	}
 	
 	public float getPlayerY(){
-		return y;
+		return Y;
 	}
 	
 	public void setPlayerCoor(float x, float y){
-		x = x;
-		y = y;
+		X = x;
+		Y = y;
 	}
 
 
