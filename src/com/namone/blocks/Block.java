@@ -31,6 +31,10 @@ public class Block {
 		spriteSheet = new SpriteSheet(textureAtlas, 32, 32, 2);
 	}
 	
+	public void draw(){
+		
+	}
+	
 	public void breakBlock(){
 		
 	}

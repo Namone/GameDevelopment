@@ -1,8 +1,15 @@
 package com.namone.gameState;
 
+import java.util.ArrayList;
+import java.util.Random;
+
+import org.lwjgl.input.Keyboard;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.opengl.Texture;
+
+import com.namone.blocks.Block;
+import com.namone.blocks.Dirt;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -22,6 +29,7 @@ public class Game extends GameState{
 	// Location for sprites (dirt, stone, etc)
 	private int X = 60, Y = 60; // Default location
 	// -2 places it right against window border
+	ArrayList<Block> blocks = new ArrayList<Block>();
 
 	// Initialize the world and player
 	public void init(Texture texture) {		
@@ -44,6 +52,7 @@ public class Game extends GameState{
 	}
 	
 	public void drawWorld(int id, int x, int y){
+	
 		atlas.createBlock(id, x, y); // Get texture		
 		
 	}
