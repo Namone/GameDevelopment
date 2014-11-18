@@ -22,7 +22,7 @@ public class Stone extends Block {
 	
 	public void draw(int x, int y){
 		
-		stone.draw(x, y);
+		stone.drawEmbedded(x, y, BLOCK_WIDTH, BLOCK_HEIGHT);
 		stone.bind();
 		// Draw the actual object
 		glBegin(GL_QUADS);

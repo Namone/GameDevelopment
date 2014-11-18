@@ -8,8 +8,8 @@ import com.namone.player.Player;
 public class InputListener {
 	
 	private boolean isRunning = false; // Is the player running?
-	private int normalSpeed = 3;
-	private int runningSpeed = 6;
+	private float normalSpeed = 3;
+	private float runningSpeed = 6;
 	
 	public InputListener(){
 		init();

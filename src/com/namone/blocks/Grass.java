@@ -22,7 +22,7 @@ private Image grass;
 	
 	public void draw(int x, int y){
 		
-		grass.draw(x, y);
+		grass.drawEmbedded(x, y, BLOCK_WIDTH, BLOCK_HEIGHT);
 		grass.bind();
 		// Draw the actual object
 		glBegin(GL_QUADS);

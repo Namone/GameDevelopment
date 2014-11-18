@@ -1,27 +1,25 @@
 package com.namone.gameState;
 
-import java.util.ArrayList;
-import java.util.Random;
+import static org.lwjgl.opengl.GL11.glClearColor;
 
-import org.lwjgl.input.Keyboard;
+import java.util.ArrayList;
+
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.opengl.Texture;
 
 import com.namone.blocks.Block;
-import com.namone.blocks.Dirt;
-
-import static org.lwjgl.opengl.GL11.*;
-
 import com.namone.input.InputListener;
 import com.namone.player.Player;
 import com.namone.textureLoader.WorldTextureLoad;
+import com.namone.worldGen.WorldGen;
 
 public class Game extends GameState{
 	
 	Player player;
 	InputListener menuSel = new InputListener();
 	WorldTextureLoad atlas = new WorldTextureLoad();
+	WorldGen worldGen = new WorldGen();
 	Texture playerTexture;
 	public int ID = 0; // CHANGE THIS TO CHANGE TEXTURE
 	// Returned image from sprite sheet
@@ -35,6 +33,7 @@ public class Game extends GameState{
 	public void init(Texture texture) {		
 		player = new Player("Jenkins", texture); // Create player - Temporary arguments for player	
 		atlas.init();
+		
 	}	
 	// Update the player & the world
 	public void update() {		// Updates player position
@@ -43,17 +42,11 @@ public class Game extends GameState{
 	}	
 	// Draw the player & the world
 	public void draw(Graphics g, Graphics graphics, GameStateManager gsm) {
-		glClearColor(0, 50, 0, 1);
+		glClearColor(0, 0, 0, 1);
 		// Draw world
-		drawWorld(ID, X, Y);
+		worldGen.worldGenerator();
 		// Draw the player to the screen (60, 60)
 		player.draw();
-		
-	}
-	
-	public void drawWorld(int id, int x, int y){
-	
-		atlas.createBlock(id, x, y); // Get texture		
 		
 	}
 

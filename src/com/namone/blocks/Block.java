@@ -28,7 +28,7 @@ public class Block {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
-		spriteSheet = new SpriteSheet(textureAtlas, 32, 32, 2);
+		spriteSheet = new SpriteSheet(textureAtlas, 32, 32, 2, 2);
 	}
 	
 	public void draw(){

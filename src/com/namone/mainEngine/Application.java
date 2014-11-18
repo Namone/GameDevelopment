@@ -23,6 +23,9 @@ public class Application {
 	public TextureLoad loadGraphics = new TextureLoad();
 	public LoadPlayer playerLoad = new LoadPlayer();
 	public Texture texture;
+	
+	public int ScreenWidthPX = 800;
+	public int ScreenHeightPX = 600;
 
 	public Application(){
 		run();
@@ -35,7 +38,7 @@ public class Application {
 	// Create the display
 	public void init(){
 		try {
-			Display.setDisplayMode(new DisplayMode(800, 600));
+			Display.setDisplayMode(new DisplayMode(ScreenWidthPX, 600));
 			Display.setTitle("JavaRPG");
 			Display.create();
 		} catch (LWJGLException e) {
@@ -43,7 +46,7 @@ public class Application {
 			e.printStackTrace();
 		}
 			
-		g = new Graphics(800, 600); // New Graphic context
+		g = new Graphics(ScreenWidthPX, ScreenHeightPX); // New Graphic context
 		graphics = new Graphics();
 			
 		initGL();
@@ -81,7 +84,7 @@ public class Application {
 		glEnable(GL_TEXTURE_2D); // Enables texture drawing !IMPORTANT!
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
-		glOrtho(0, 800, 0, 600, -1, 1);		
+		glOrtho(0, ScreenWidthPX, 0, ScreenHeightPX, -1, 1);		
 		glMatrixMode(GL_MODELVIEW);
 		glDisable(GL_DEPTH_TEST); // Since it is not a 3D game
 	}

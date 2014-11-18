@@ -1,11 +1,14 @@
 package com.namone.player;
 
 import java.io.IOException;
+
+import org.lwjgl.opengl.Display;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 import org.newdawn.slick.util.ResourceLoader;
+
 import static org.lwjgl.opengl.GL11.*;
 
 public class Player {
@@ -15,7 +18,7 @@ public class Player {
 	private int playerStrength = 10;
 	private String playerName; // Input by user on player creation
 	//public Vector2f playerPosition; // Player position
-	public float X = 10, Y = 50; // Player position
+	public float X = Display.getWidth() / 2.3f, Y = Display.getHeight() / 2; // Player position
 	public Texture playerTexture; // Player texture
 	
 	// Create player

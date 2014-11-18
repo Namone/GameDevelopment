@@ -20,7 +20,7 @@ public class Dirt extends Block{
 	
 	public void draw(int x, int y){
 		
-		dirt.draw(x, y);
+		dirt.drawEmbedded(x, y, BLOCK_WIDTH, BLOCK_HEIGHT);
 		dirt.bind();
 		// Draw the actual object
 		glBegin(GL_QUADS);
