@@ -49,5 +49,14 @@ public class Game extends GameState{
 		player.draw();
 		
 	}
+<<<<<<< HEAD
+=======
+	
+	public void drawWorld(int id, int x, int y){             //Not used in world gen. Delete?
+	
+		atlas.createBlock(id, x, y); // Get texture		
+		
+	}
+>>>>>>> origin/master
 
 }
