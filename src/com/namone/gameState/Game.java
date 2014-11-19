@@ -31,8 +31,9 @@ public class Game extends GameState{
 
 	// Initialize the world and player
 	public void init(Texture texture) {		
-		player = new Player("Jenkins", texture); // Create player - Temporary arguments for player	
+		player = new Player("Jenkins", texture); // Create player - Temporary arguments for player
 		atlas.init();
+		worldGen.assignBlocks();
 		
 	}	
 	// Update the player & the world
@@ -44,19 +45,11 @@ public class Game extends GameState{
 	public void draw(Graphics g, Graphics graphics, GameStateManager gsm) {
 		glClearColor(0, 0, 0, 1);
 		// Draw world
+		
 		worldGen.worldGenerator();
 		// Draw the player to the screen (60, 60)
 		player.draw();
 		
 	}
-<<<<<<< HEAD
-=======
-	
-	public void drawWorld(int id, int x, int y){             //Not used in world gen. Delete?
-	
-		atlas.createBlock(id, x, y); // Get texture		
-		
-	}
->>>>>>> origin/master
 
 }

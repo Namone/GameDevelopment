@@ -23,7 +23,7 @@ public class WorldTextureLoad{
 	Image textureAtlas;
 	
 	public void init(){
-		Block block = new Block();
+
 
 	}
 	
@@ -32,7 +32,7 @@ public class WorldTextureLoad{
 		return spriteSheet;
 	}
 	
-	public void createBlock(int id , int x, int y){
+	public Block createBlock(int id , int x, int y){
 		ID = id;	
 		// NOTE: Images use cell positioning (not X Y)
 		// Thus the 0, 0 : 1, 0 : 2, 0 
@@ -40,14 +40,14 @@ public class WorldTextureLoad{
 		{
 		// BEGIN SWITCH
 		case 0: // ID 0 ----- > DIRT
-			new Dirt(x, y);		
-			break;
+			Dirt dirt = new Dirt(x, y);		
+			return dirt;
 		case 1: // ID 1 ----- > GRASS
-			new Grass(x, y);
-			break;
+			Grass grass = new Grass(x, y);
+			return grass;
 		case 2: // ID 2 ----- > STONE
-			new Stone(x, y);
-			break;
+			Stone stone =  new Stone(x, y);
+			return stone;
 		default:
 			try {
 				throw new SlickException(">> TEXTURE LOAD FAILED");
@@ -58,6 +58,8 @@ public class WorldTextureLoad{
 			
 		// END SWITCH
 		}
+		
+		return null;
 		
 	}
 	
