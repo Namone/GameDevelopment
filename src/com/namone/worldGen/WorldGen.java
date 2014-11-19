@@ -14,8 +14,8 @@ public class WorldGen {
 	
 	public int ScreenWidthPX = 800; 
 	public int ScreenHeightPX = 600;
-	public int ScreenWidthBlocks = ScreenWidthPX / 32; // Divide screen into equal 'blocks'
-	public int ScreenHeightBlocks = ScreenHeightPX / 32; // Same as above
+	public int ScreenWidthBlocks = (ScreenWidthPX / 32) + 1; // Divide screen into equal 'blocks'
+	public int ScreenHeightBlocks = (ScreenHeightPX / 32) + 1;  // Same as above
 	
 	public int id;
 	public int x;
@@ -55,8 +55,13 @@ public class WorldGen {
 				id = random.nextInt(3);
 				x = i * 32;
 				y = ii * 32;
-				gameBlocks[i][ii] = atlas.createBlock(id, x, y);
-				
+				if(gameBlocks[i][ii] == null){
+					gameBlocks[i][ii] = atlas.createBlock(id, x, y);
+				} else {
+					Block block = gameBlocks[i][ii];
+					gameBlocks[i][ii] = atlas.createBlock(block.getID(), block.getX(), block.getY());
+					
+				}
 
 					
 			}
