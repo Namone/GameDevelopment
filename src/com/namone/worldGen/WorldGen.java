@@ -50,14 +50,12 @@ public class WorldGen {
 	
 	public void worldGenerator() {
 		
-		for(int i = 0; i <= gameBlocks.length; i++){
-			for(int ii = 0; ii <= gameBlocks.length; ii++){					
+		for(int i = 0; i < ScreenWidthBlocks; i++){         //changed these to var names used to create the array
+			for(int ii = 0; ii < ScreenHeightBlocks; ii++){					
 				id = random.nextInt(3);
 				x = i * 32;
 				y = ii * 32;
-				if(gameBlocks[i][ii] == null){
-					gameBlocks[i][ii] = atlas.createBlock(id, x, y);
-				}
+				gameBlocks[i][ii] = atlas.createBlock(id, x, y);
 				
 
 					
