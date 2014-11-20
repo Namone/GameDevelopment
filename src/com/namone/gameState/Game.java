@@ -33,6 +33,7 @@ public class Game extends GameState{
 	public void init(Texture texture) {		
 		player = new Player("Jenkins", texture); // Create player - Temporary arguments for player
 		atlas.init();
+		worldGen.assignBlocks();
 		
 	}	
 	// Update the player & the world

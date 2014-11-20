@@ -44,126 +44,85 @@ public class InputListener {
 			if(Keyboard.isKeyDown(Keyboard.KEY_W) && Keyboard.isKeyDown(Keyboard.KEY_D)){            // Moves UP and RIGHT
 				player.Y += normalSpeed;
 				player.X += normalSpeed;
-				player.xStore.add((int)player.X);
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y += runningSpeed;
 					player.X += runningSpeed;
-					player.xStore.add((int)player.X);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_W) && Keyboard.isKeyDown(Keyboard.KEY_A)){            // Moves UP and LEFT
 				player.Y += normalSpeed;
 				player.X -= normalSpeed;
-				player.xStore.add((int)player.X);
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y += runningSpeed;
 					player.X -= runningSpeed;
-					player.xStore.add((int)player.X);
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_UP) && Keyboard.isKeyDown(Keyboard.KEY_RIGHT)){            // Moves UP and RIGHT
 				player.Y += normalSpeed;
 				player.X += normalSpeed;
-				player.xStore.add((int)player.X);
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y += runningSpeed;
 					player.X += runningSpeed;
-					player.xStore.add((int)player.X);
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_UP) && Keyboard.isKeyDown(Keyboard.KEY_LEFT)){             // Moves UP and LEFT
 				player.Y += normalSpeed;
 				player.X -= normalSpeed;
-				player.xStore.add((int)player.X);
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y += runningSpeed;
 					player.X -= runningSpeed;
-					player.xStore.add((int)player.X);
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_S) && Keyboard.isKeyDown(Keyboard.KEY_D)){            // Moves DOWN and RIGHT
 				player.Y -= normalSpeed;
 				player.X += normalSpeed;
-				player.xStore.add((int)player.X);
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y -= runningSpeed;
 					player.X += runningSpeed;
-					player.xStore.add((int)player.X);
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_S) && Keyboard.isKeyDown(Keyboard.KEY_A)){            // Moves DOWN and LEFT 
 				player.Y -= normalSpeed;
 				player.X -= normalSpeed;
-				player.xStore.add((int)player.X);
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y -= runningSpeed;
 					player.X -= runningSpeed;
-					player.xStore.add((int)player.X);
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_DOWN) && Keyboard.isKeyDown(Keyboard.KEY_RIGHT)){            // Moves DOWN and RIGHT
 				player.Y -= normalSpeed;
 				player.X += normalSpeed;
-				player.xStore.add((int)player.X);
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y -= runningSpeed;
 					player.X += runningSpeed;
-					player.xStore.add((int)player.X);
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_DOWN) && Keyboard.isKeyDown(Keyboard.KEY_LEFT)){        // Moves  DOWN and LEFT
 				player.Y -= normalSpeed;
 				player.X -= normalSpeed;
-				player.xStore.add((int)player.X);
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y -= runningSpeed;
 					player.X -= runningSpeed;
-					player.xStore.add((int)player.X);
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_W) || Keyboard.isKeyDown(Keyboard.KEY_UP)){            // Moves Up
 				player.Y += normalSpeed;
 				// If the player is running; move faster
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y += runningSpeed;
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_A) || Keyboard.isKeyDown(Keyboard.KEY_LEFT)){   // Moves Left
 				player.X -= normalSpeed;
-				player.xStore.add((int)player.X);
 				if(isRunning){
 					player.X -= runningSpeed;
-					player.xStore.add((int)player.X);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_S) || Keyboard.isKeyDown(Keyboard.KEY_DOWN)){   // Moves Down
 				player.Y -= normalSpeed;
-				player.yStore.add((int)player.Y);
 				if(isRunning){
 					player.Y -= runningSpeed;
-					player.yStore.add((int)player.Y);
 				}
 			} else if(Keyboard.isKeyDown(Keyboard.KEY_D) || Keyboard.isKeyDown(Keyboard.KEY_RIGHT)){  // Moves Right 
 				player.X += normalSpeed;
-				player.xStore.add((int)player.X);
 				if(isRunning){
 					player.X += runningSpeed;
-					player.xStore.add((int)player.X);
 				}
 			} else if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)){
 				isRunning = false;
 			}	
 
 		}
-		
-
 		
 		
 	}

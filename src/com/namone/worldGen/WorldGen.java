@@ -26,6 +26,28 @@ public class WorldGen {
 	// 2D array to hold map
 	private Block[][] gameBlocks = new Block[ScreenWidthBlocks][ScreenHeightBlocks];
 	
+	//Having a problem going through he whole 2d array. Thoughts?    
+	// Run the program and you will see the issue there. Need anything ask me?
+	
+	/*
+	 * Using System.out.println("FORLOOP STOP"); I was able to determine
+	 * the for loops do not ever stop; causing the id's to never stop
+	 * resetting/changing.
+	 * 
+	 * I don't know how we want to handle this.
+	 * 
+	 * I left some comments below just for me to remember. I think I 
+	 * figured out what each thing does, if they're incorrect let me know.
+	 */
+	
+	public void assignBlocks(){
+		
+	}
+	
+	public void drawWorld(){
+		
+	}
+	
 	public void worldGenerator() {
 		
 		for(int i = 0; i < ScreenWidthBlocks; i++){         //changed these to var names used to create the array
@@ -33,13 +55,9 @@ public class WorldGen {
 				id = random.nextInt(3);
 				x = i * 32;
 				y = ii * 32;
-				// If the array is empty create new array elements
-				// with random id, etc.
 				if(gameBlocks[i][ii] == null){
 					gameBlocks[i][ii] = atlas.createBlock(id, x, y);
 				} else {
-					// If the array isn't empty assign the array values 
-					// previously generated to it & draw
 					Block block = gameBlocks[i][ii];
 					gameBlocks[i][ii] = atlas.createBlock(block.getID(), block.getX(), block.getY());
 					

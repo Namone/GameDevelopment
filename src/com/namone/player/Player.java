@@ -1,7 +1,6 @@
 package com.namone.player;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import org.lwjgl.opengl.Display;
 import org.newdawn.slick.Color;
@@ -21,9 +20,6 @@ public class Player {
 	//public Vector2f playerPosition; // Player position
 	public float X = Display.getWidth() / 2.3f, Y = Display.getHeight() / 2; // Player position
 	public Texture playerTexture; // Player texture
-	
-	public ArrayList<Integer> xStore = new ArrayList<Integer>();
-	public ArrayList<Integer> yStore = new ArrayList<Integer>();
 	
 	// Create player
 	public Player(String pName, Texture pTexture){
