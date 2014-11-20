@@ -10,6 +10,7 @@ import org.newdawn.slick.opengl.Texture;
 
 import com.namone.gameState.GameStateManager;
 import com.namone.player.LoadPlayer;
+import com.namone.player.Player;
 import com.namone.texture.menu.MenuLoader;
 import com.namone.textureLoader.*;
 
@@ -84,7 +85,7 @@ public class Application {
 		glEnable(GL_TEXTURE_2D); // Enables texture drawing !IMPORTANT!
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
-		glOrtho(0, ScreenWidthPX, 0, ScreenHeightPX, -1, 1);		
+		glOrtho(0, ScreenWidthPX, 0, ScreenHeightPX, -1, 1);
 		glMatrixMode(GL_MODELVIEW);
 		glDisable(GL_DEPTH_TEST); // Since it is not a 3D game
 	}
