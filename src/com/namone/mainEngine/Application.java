@@ -26,6 +26,7 @@ public class Application {
 	
 	public int ScreenWidthPX = 800;
 	public int ScreenHeightPX = 600;
+	int test = 0;
 
 	public Application(){
 		run();
@@ -91,7 +92,10 @@ public class Application {
 	// Update code
 	public void update(){
 		//TODO: Update code goes here
+		
 		gsm.update(); // -----> Updates current game state; whether it's the Menu or Game
+		glViewport(test, 0, 800, 600);
+		test++;
 	}	
 	// Render the game (Draw)
 	public void render(Graphics g, Graphics graphics, GameStateManager gsm){
