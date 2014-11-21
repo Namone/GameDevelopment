@@ -29,9 +29,6 @@ public class Game extends GameState{
 	// Returned image from sprite sheet
 	Image spriteTexture;
 	
-	// Location for sprites (dirt, stone, etc)
-	private int X = 60, Y = 60; // Default location
-	
 	// Initialize the world and player
 	public void init(Texture texture) {		
 		player = new Player("Jenkins", texture); // Create player - Temporary arguments for player
@@ -47,9 +44,8 @@ public class Game extends GameState{
 	}	
 	// Draw the player & the world
 	public void draw(Graphics g, Graphics graphics, GameStateManager gsm) {
-		glClearColor(0, 0, 0, 1);
-		// Draw world
-		
+		System.out.println(player.getPlayerX() + " - " + player.getPlayerY());
+		glViewport(-(int)player.getPlayerX() + 350, -(int)player.getPlayerY() + 300, Display.getWidth(), Display.getHeight());	
 		worldGen.worldGenerator();
 		// Draw the player to the screen (60, 60)
 		player.draw();

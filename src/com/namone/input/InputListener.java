@@ -34,7 +34,8 @@ public class InputListener {
 		}
 		return false;
 	}
-	
+	//NOTE: isMoving<direction> booleans are no longer used. Figured I would leave them
+	// in case we used them in future.
 	public void keyboardClickListener(Player player){ // Changes player position
 		while(Keyboard.next()){
 			if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)){

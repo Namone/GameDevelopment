@@ -25,7 +25,7 @@ public class Player {
 	public boolean isMovingUp = false; // Is the player moving up?
 	public boolean isMovingDown = false; // Is the player moving down?
 	
-	public float X = Display.getWidth() / 2.3f, Y = Display.getHeight() / 2; // Player position
+	public float X = 60, Y = 60; // Player position
 	public Texture playerTexture; // Player texture
 	
 	public ArrayList<Integer> xStore = new ArrayList<Integer>();
@@ -61,26 +61,8 @@ public class Player {
 	}
 	// Update the player
 	public void update(){
-		glViewport(viewX, viewY, Display.getWidth(), Display.getHeight());	
-		// -10 because that's the edge of the screen (not sure why)
-		if(X <= -10){
-			if(isMovingLeft){
-				viewX += 10;
-			}	
-		} else if(X >= 790){			
-			if(isMovingRight){
-				viewX -= 50;
-			}
-		} else if(Y <= -10){
-			if(isMovingUp){
-				viewY += 50;
-			}
-		} else if(Y >= 590){
-			if(isMovingDown){
-				viewY -= 50;
-			}
-		}
-	}
+		
+	} 
 	
 	public float getPlayerX(){
 		return X;
